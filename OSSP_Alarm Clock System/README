@@ -13,6 +13,7 @@ Instead of simply waiting in a loop until an alarm time is reached, the system c
 The project also provides persistent alarm storage, recurring alarms, alarm analytics, missed-alarm detection, daily scheduling, and sound notifications.
 
 ✨ Features
+
 ⏰ Alarm Management
 Set an alarm using a delay in seconds
 Set an alarm for a specific time
@@ -22,20 +23,24 @@ View detailed alarm information
 Modify alarms
 Cancel active alarms
 Snooze alarms
+
 🔁 Recurring Alarms
 One-time alarms
 Daily alarms
 Weekday alarms
 Weekend alarms
 Automatically schedule the next occurrence
+
 💾 Persistent Storage
 Saves active alarms to alarms.dat
 Restores alarms when the program starts
 Maintains alarm history in alarm_history.txt
+
 🔊 Alarm Notification
 Terminal alarm notification
 Real alarm sound using Linux audio utilities
 Sound support through paplay/aplay
+
 📊 Analytics
 Total alarms created
 Total alarms triggered
@@ -46,24 +51,30 @@ Missed alarms
 Recurring alarms
 Currently active alarms
 Trigger rate
+
 🚫 Missed Alarm Detection
 Detects alarms that pass without being triggered
 Marks them as MISSED
 Handles missed alarms after restarting the application
+
 📅 Daily Schedule
 Displays today's scheduled alarms
 Shows alarm time, ID, label, and repeat type
+
 🖥️ Process Monitoring
 Displays PID
 Displays PPID
 Displays PGID
 Shows alarm child processes
 Demonstrates parent-child process relationships
+
 🕐 Live Clock
 Displays the current system time
 Continuously updates the clock
 Alarm monitoring continues in the background
+
 🧠 Operating System Concepts Demonstrated
+
 CO-1: Operating System as a Service Layer
 
 The application interacts with Linux through system calls and OS services.
@@ -78,6 +89,8 @@ sysconf()
 open()
 write()
 close()
+
+
 CO-2: Processes and Process Control
 
 Each alarm can be handled by a separate child process.
@@ -110,6 +123,8 @@ Parent Process
                        SIGALRM
                            |
                     Alarm Notification
+
+
 CO-3: Inter-Process Communication
 
 The project demonstrates multiple IPC mechanisms:
@@ -134,6 +149,7 @@ SIGTERM
 
 SIGALRM is used to notify an alarm process when its scheduled time is reached.
 
+
 CO-4: Memory Management
 
 Dynamic memory is used to store alarms.
@@ -147,6 +163,7 @@ free()
 The alarm list dynamically grows as more alarms are created.
 
 The project also demonstrates the relationship between process creation and virtual memory through fork() and copy-on-write.
+
 
 CO-5: File Systems and File I/O
 
@@ -164,6 +181,7 @@ alarms.dat
 alarm_history.txt
 
 alarms.dat stores alarm information, while alarm_history.txt records important alarm events.
+
 
 CO-6: Concurrency and Synchronization
 
@@ -189,6 +207,7 @@ sem_wait()
 sem_post()
 
 A separate monitoring thread continuously checks alarm events while the main program remains available for user interaction.
+
 
 🏗️ System Architecture
                   Linux Alarm Clock System
@@ -219,6 +238,8 @@ A separate monitoring thread continuously checks alarm events while the main pro
               Persistent Storage
                     |
                 alarms.dat
+
+
 🛠️ Technologies Used
 Technology	                    Purpose
 C	                          Core implementation
@@ -233,7 +254,10 @@ Semaphores	                    Synchronization
 Mutex	                          Shared-data protection
 File I/O	                    Persistent storage
 Git/GitHub	                    Version control and project hosting
+
+
 📂 Project Structure
+
 alarm-clock/
 │
 ├── alarmclock.c
@@ -262,6 +286,8 @@ cd YOUR-REPOSITORY
 gcc -Wall -Wextra -pthread alarmclock.c -o alarmclock
 4. Run the program
 ./alarmclock
+
+
 🔊 Sound Setup
 
 For real alarm sound support, install Linux audio utilities:
@@ -276,6 +302,7 @@ which paplay
 You can also check the default sound file:
 
 ls /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga
+
 🎮 Main Menu
 
 The application provides the following options:
@@ -294,6 +321,7 @@ The application provides the following options:
 12. Live Clock
 13. Today's Daily Schedule
 14. Exit
+
 🧪 Example
 Create an alarm
 Enter your choice: 1
@@ -316,6 +344,8 @@ Scheduled Time : 07:30:10 PM
 Current Time   : 07:30:10 PM
 
 Playing alarm sound...
+
+
 📊 Example Analytics
 ==================== ALARM ANALYTICS ======================
 
@@ -330,6 +360,8 @@ Currently Active         : 1
 Recurring Alarms         : 1
 
 Trigger Rate             : 60.00%
+
+
 🔄 Alarm Workflow
 User
  |
@@ -365,6 +397,8 @@ Monitoring Thread
  +-------> Persistent Storage
  |
  +-------> Recurring Alarm
+
+
 🎯 Project Objectives
 Implement an alarm system using Linux OS mechanisms
 Demonstrate process creation and process control
@@ -377,6 +411,7 @@ Support multiple and recurring alarms
 Detect missed alarms
 Provide alarm analytics and scheduling
 Demonstrate practical Operating Systems concepts
+
 🔮 Future Enhancements
 Graphical User Interface
 Custom alarm sounds
@@ -386,6 +421,7 @@ Mobile notification support
 Calendar integration
 Database-backed alarm storage
 Advanced analytics dashboard
+
 👩‍💻 Project
 
 Project: Linux Alarm Clock System
