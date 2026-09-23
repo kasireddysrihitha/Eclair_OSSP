@@ -220,19 +220,19 @@ A separate monitoring thread continuously checks alarm events while the main pro
                     |
                 alarms.dat
 🛠️ Technologies Used
-Technology	Purpose
-C	Core implementation
-Linux/Ubuntu	Operating system environment
-GCC	C compiler
-POSIX APIs	OS-level programming
-pthread	Multithreading
-Signals	Alarm notification
-Pipes	IPC
-FIFO	Named IPC
-Semaphores	Synchronization
-Mutex	Shared-data protection
-File I/O	Persistent storage
-Git/GitHub	Version control and project hosting
+Technology	                    Purpose
+C	                          Core implementation
+Linux/Ubuntu	              Operating system environment
+GCC	                          C compiler
+POSIX APIs	                    OS-level programming
+pthread	                    Multithreading
+Signals	                    Alarm notification
+Pipes	                          IPC
+FIFO	                          Named IPC
+Semaphores	                    Synchronization
+Mutex	                          Shared-data protection
+File I/O	                    Persistent storage
+Git/GitHub	                    Version control and project hosting
 📂 Project Structure
 alarm-clock/
 │
