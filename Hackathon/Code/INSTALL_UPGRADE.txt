@@ -1,0 +1,19 @@
+FileDedup dashboard upgrade (preserves your C scanner)
+
+Replace these three files in ~/filededup:
+  frontend/index.html
+  frontend/style.css
+  frontend/app.js
+  backend/server.py
+
+Before replacing, back up the current files. From Ubuntu, unzip this package to a temporary directory, then copy only these four files into ~/filededup. Keep your existing backend/main.c and backend/filededup.
+
+Compile if needed:
+  cd ~/filededup
+  gcc -Wall -Wextra -O2 backend/main.c -o backend/filededup -lcrypto
+
+Start server:
+  python3 backend/server.py
+Open http://127.0.0.1:8088
+
+Quarantine data is stored under ~/.local/share/filededup/quarantine with a manifest beside it. Selected review copies are re-hashed against their reference copy before being moved. Restore refuses to overwrite existing files. This is a local-only app; do not expose port 8088 to a network.
